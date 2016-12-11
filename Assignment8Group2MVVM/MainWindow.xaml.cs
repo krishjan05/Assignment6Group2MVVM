@@ -20,9 +20,16 @@ namespace Assignment8Group2MVVM
     /// </summary>
     public partial class MainWindow : Window
     {
+        carRepair cr;
         public MainWindow()
         {
             InitializeComponent();
+            cr = new carRepair();
+            DataContext = cr;
+        }
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            cr.TotalCharges();
         }
     }
 }

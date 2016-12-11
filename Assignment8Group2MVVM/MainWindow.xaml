@@ -5,8 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment8Group2MVVM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Name="lblTitle"
+               Content="Joe Automotive"
+               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="32" />
+        <CheckBox Name="chbxOilChange"
+                     Grid.Column="0" Grid.Row="1"
+                     Content="Oil Change"
+                     FontSize="24"
+                     Margin="10"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                     IsChecked="{Binding isOilChangeChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Name="chbxLubeJob"
+                     Grid.Column="0" Grid.Row="2"
+                     Content="Lube Job"
+                     FontSize="24"
+                     Margin="10"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                  IsChecked="{Binding isLubeJobChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Name="chbxRadiatorFlush"
+                     Grid.Column="0" Grid.Row="3"
+                     Content="Radiator Flush"
+                     FontSize="24"
+                     Margin="10"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                  IsChecked="{Binding isRadiatorFlashChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Name="chbxTransmissionFlush"
+                     Grid.Column="0" Grid.Row="4"
+                     Content="Transmission Flush"
+                     FontSize="24"
+                     Margin="10"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                  IsChecked="{Binding isTransmissionFlashChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Name="chbxInspection"
+                     Grid.Column="0" Grid.Row="5"
+                     Content="Inspection"
+                     FontSize="24"
+                     Margin="10"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                   IsChecked="{Binding isInspectionChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Name="chbxMufflerReplacement"
+                     Grid.Column="0" Grid.Row="6"
+                     Content="Muffler Replacement"
+                     FontSize="24"
+                     Margin="10"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                  IsChecked="{Binding isMufflerRotationChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <CheckBox Name="chbxTireRotation"
+                     Grid.Column="0" Grid.Row="7"
+                     Content="Tire Rotation"
+                     FontSize="24"
+                     Margin="10"
+                     HorizontalAlignment="Left" VerticalAlignment="Center"
+                  IsChecked="{Binding _isTireRotationChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Name="lblLabour"
+               Grid.Column="1" Grid.Row="1"
+               Content="Labour(Hours)"
+               FontSize="24"
+               HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox Name="txtLabour"
+                 Grid.Column="1" Grid.Row="2"
+                 Margin="10"
+                 Text="{Binding labourDuration, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Name="lblParts"
+               Grid.Column="1" Grid.Row="3"
+               Content="Cost of Part"
+               FontSize="24"
+               HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox Name="txtParts"
+                 Grid.Column="1" Grid.Row="4"
+                 Margin="10"
+                 Text="{Binding partCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Name="btnCalculate"
+                Grid.Column="1" Grid.Row="5"
+                Content="Calculate"
+                Margin="10" Click="btnCalculate_Click"/>
+        <Label Name="lblResult"
+               Grid.Column="1" Grid.Row="6"
+               Margin="10"
+               ContentStringFormat="N2"
+               Content="{Binding totalCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Window>
